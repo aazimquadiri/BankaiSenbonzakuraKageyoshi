@@ -9,7 +9,7 @@ An interactive, high-performance WebGL 3D particle simulation inspired by Byakuy
 ## 🎬 Cinematic Preview
 
 <p align="center">
-  <video src="preview.mp4" width="100%" autoplay loop muted playsinline></video>
+  <video src="https://github.com/aazimquadiri/BankaiSenbonzakuraKageyoshi/raw/main/preview.mp4" width="100%" autoplay loop muted playsinline></video>
 </p>
 
 ---
