@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:300,regular,500,600,700,800,900&display=swap");
+
+* {
+    padding: 0rem;
+    margin: 0rem;
+    border: 0rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    display: inline-block;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+    scrollbar-gutter: stable;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 20rem;
+    color: #000;
+    font-family: "Inter";
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input,
+textarea {
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+}
+
+button,
+select,
+option {
+    cursor: pointer;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+address {
+    font-style: normal;
+}
+
+[data-anim-scrolllock] body {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+}
+
+.wrapper>main {
+    flex: 1 1 auto;
+}
+
+.wrapper>* {
+    min-width: 0;
+}
+
+[class*=__container] {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+
+canvas {
+    display: block;
+    z-index: 10;
+}
+
+.index {
+    position: relative;
+}
+
+.subject {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    opacity: 0.95;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.subject.hidden {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.95);
+    pointer-events: none;
+}
+
+.subject-toggle {
+    position: fixed;
+    top: 6.5rem;
+    right: 2rem;
+    z-index: 100;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 183, 197, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 183, 197, 0.35);
+    box-shadow: 0 4px 16px 0 rgba(255, 183, 197, 0.15), inset 0 0 10px rgba(255, 183, 197, 0.1);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: liquid-morph 4s ease-in-out infinite, float-bar 6s ease-in-out infinite;
+    cursor: pointer;
+    color: rgba(255, 183, 197, 0.95);
+    fill: currentColor;
+}
+
+.subject-toggle svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.subject-toggle.off svg {
+    transform: rotate(180deg);
+}
+
+#burstCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .subject-toggle {
+        top: 5.5rem;
+        right: 1rem;
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .subject-toggle svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .subject-toggle {
+        top: 4rem;
+        right: 0.75rem;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .subject-toggle svg {
+        width: 0.85rem;
+        height: 0.85rem;
+    }
+}
+
+.liquid-glass-bar {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 100;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 183, 197, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 183, 197, 0.35);
+    box-shadow: 0 4px 16px 0 rgba(255, 183, 197, 0.15), inset 0 0 10px rgba(255, 183, 197, 0.1);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: liquid-morph 4s ease-in-out infinite, float-bar 6s ease-in-out infinite;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes liquid-morph {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    50% {
+        border-radius: 60% 40% 30% 70% / 60% 50% 40% 50%;
+    }
+
+    100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+}
+
+@keyframes float-bar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes icon-idle {
+    0% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 0 rgba(255, 183, 197, 0));
+    }
+
+    100% {
+        transform: translateY(-4px) scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(255, 183, 197, 0.5));
+        color: rgba(255, 183, 197, 0.9);
+    }
+}
+
+@keyframes icon-click-ripple {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(255, 183, 197, 0));
+    }
+
+    40% {
+        transform: scale(0.85);
+        filter: drop-shadow(0 0 20px rgba(255, 183, 197, 1));
+    }
+
+    100% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 6px rgba(255, 183, 197, 0.4));
+    }
+}
+
+.social-icon {
+    color: rgba(255, 255, 255, 0.7);
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: icon-idle 2s ease-in-out infinite alternate;
+}
+
+.social-icon.clicked {
+    animation: icon-click-ripple 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+.social-icon svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+.social-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.social-icon:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.social-icon:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@media (max-width: 768px) {
+    .liquid-glass-bar {
+        top: 2rem;
+        right: 1rem;
+        gap: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .social-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .social-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .liquid-glass-bar {
+        top: 0.75rem;
+        right: 0.75rem;
+        gap: 0.75rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+    .social-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .social-icon svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
