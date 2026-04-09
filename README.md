@@ -8,10 +8,9 @@ An interactive, high-performance WebGL 3D particle simulation inspired by Byakuy
 
 ## 🎬 Cinematic Preview
 
-<div align="center">
-  <video src="preview.mp4" autoplay loop muted playsinline width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>
-  <p><i>Real-time recording of the interactive petal field and mouse repulsion physics.</i></p>
-</div>
+<p align="center">
+  <video src="preview.mp4" width="100%" autoplay loop muted playsinline></video>
+</p>
 
 ---
 
