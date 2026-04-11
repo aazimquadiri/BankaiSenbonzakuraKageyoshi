@@ -2,14 +2,14 @@
 
 An interactive, high-performance WebGL 3D particle simulation inspired by Byakuya Kuchiki's iconic Bankai from *Bleach*. This project leverages custom GLSL shaders and real-time physics to render thousands of cherry blossom petals that respond dynamically to user interaction.
 
-**[🔗 CLICK HERE TO VISIT THE PROJECT'S OFFICIAL WEBSITE](https://aazimquadiri.github.io/BankaiSenbonzakuraKageyoshi/)**
+**[🔗 CLICK HERE TO VISIT THE PROJECT'S OFFICIAL WEBSITE](https://bankai.plaxinfy.in/)**
 
 ---
 
 ## 🎬 Image Preview
 
 <div align="center">
-  <a href="https://aazimquadiri.github.io/BankaiSenbonzakuraKageyoshi/">
+  <a href="https://bankai.plaxinfy.in/">
     <img src="https://iili.io/B0wowSS.png" alt="Senbonzakura Kageyoshi Preview" width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
   </a>
   <p><i>Click the image above to experience the interactive Bankai release.</i></p>
