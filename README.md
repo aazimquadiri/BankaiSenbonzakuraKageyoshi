@@ -74,7 +74,6 @@ The core of the visual beauty lies in the scripts:
 ├── index.html       # Entry point & GLSL Shader code
 ├── style.css        # UI styling & liquid-morphing animations
 ├── script.js        # WebGL Engine & Physics interactions
-├── preview.mp4      # Looping video for README (Root Directory)
 ├── CNAME            # Custom domain configuration (bankai.plaxinfy.in)
 └── assets/
     └── subject.png  # The central character image
